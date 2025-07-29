@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">Create New Poll</div>
+            <div class="card-body">
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+                    <div class="mb-3">
+                        {{ form.question.label(class="form-label") }}
+                        {{ form.question(class="form-control", placeholder="Enter your question here") }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.options.label(class="form-label") }}
+                        {{ form.options(class="form-control", rows=5, placeholder="Enter one option per line") }}
+                        <div class="form-text">Each line will become a separate poll option</div>
+                    </div>
+                    {{ form.submit(class="btn btn-primary") }}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

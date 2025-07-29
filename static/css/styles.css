@@ -1,0 +1,17 @@
+body {
+    padding-top: 20px;
+    background-color: #f8f9fa;
+}
+
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.form-check {
+    margin-bottom: 10px;
+}

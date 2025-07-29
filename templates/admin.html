@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3>Poll Management</h3>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Poll Question</th>
+                            <th>Created</th>
+                            <th>Total Votes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for poll in polls %}
+                        <tr>
+                            <td><a href="{{ url_for('view_poll', poll_id=poll.poll.id) }}">{{ poll.poll.question }}</a></td>
+                            <td>{{ poll.poll.created_at.strftime('%Y-%m-%d') }}</td>
+                            <td>{{ poll.total_votes }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h3>User Management</h3>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Admin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                        <tr>
+                            <td>{{ user.username }}</td>
+                            <td>{% if user.is_admin %}Yes{% else %}No{% endif %}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
