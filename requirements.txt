@@ -5,3 +5,4 @@ flask-wtf
 flask-socketio
 redis
 python-dotenv
+gunicorn
